@@ -32,7 +32,7 @@ app.set('view engine', 'handlebars');
 
 //middleware
 //app.use(session(sess));
-app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(require('./controllers/'));
 
