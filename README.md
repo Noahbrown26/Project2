@@ -75,8 +75,8 @@ This will run the server where you can find the page on localhost:3001. To end y
 ![Shot-2]()
 
 ### Credits
-- Noah Brown
-- Eduardo Monje
-- Luis Villa
-- Polk Lucas
-- Kasahara Jeff
+- [Noah Brown](https://github.com/Noahbrown26)
+- [Eduardo Monje](https://github.com/Goldnboy26)
+- [Luis Villa](https://github.com/luisvilla315)
+- [Polk Lucas](https://github.com/ukn-tye)
+- [Kasahara Jeff](https://github.com/CodeJeffK)
