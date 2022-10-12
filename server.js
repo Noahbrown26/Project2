@@ -1,70 +1,46 @@
 // import packages and files
 const express = require('express');
 const session = require('express-session');
+const path = require('path');
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({});
 //const routes = require('./controllers');
-
 const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const routes = ('./controllers/index.js');
+
+//const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 
 //setup port
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 //setup session
-const sess = {
-  secret: 'Super secret secret',
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
+//const sess = {
+//  secret: 'Super secret secret',
+//  cookie: {},
+//  resave: false,
+//  saveUninitialized: true,
+//  store: new SequelizeStore({
+//    db: sequelize
+//  })
+// };
 
-app.use(session(sess));
+//set handlebars template engine 
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
-app.use(express.json());
+//middleware
+//app.use(session(sess));
+app.use(express.static(path.join(__dirname, 'assets')));
 app.use(express.urlencoded({ extended: true }));
+app.use(require('./controllers/'));
 
 //setup api routes
 //app.use(routes);
 
+//initialize server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Server listening on: http://localhost:' + PORT));
 });
 
-const firstText = document.querySelector("#firstText");
-const lastText = document.querySelector("#lastText");
-const submitBtn = document.querySelector("#submitBtn");
-const cookieBtn = document.querySelector("#cookieBtn");
-
-submitBtn.addEventListener("click", () => {
-    setCookie("firstName", firstText.value, 365);
-    setCookie("lastName", lastText.value, 365);
-});
-cookieBtn.addEventListener("click", () => {
-    firstText.value = getCookie("firstName");
-    lastText.value = getCookie("lastName");
-});
-
-function setCookie(name, value, daysToLive){
-    const date = new Date();
-    date.setTime(date.getTime() +  (daysToLive * 24 * 60 * 60 * 1000));
-    let expires = "expires=" + date.toUTCString();
-    document.cookie = `${name}=${value}; ${expires}; path=/`
-}
-function deleteCookie(name){
-    setCookie(name, null, null);
-}
-function getCookie(name){
-    const cDecoded = decodeURIComponent(document.cookie);
-    const cArray = cDecoded.split("; ");
-    let result = null;
-    
-    cArray.forEach(element => {
-        if(element.indexOf(name) == 0){
-            result = element.substring(name.length + 1)
-        }
-    })
-    return result;
-}
