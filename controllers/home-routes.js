@@ -15,12 +15,12 @@ router.get('/', async (req, res) => {
 // signup route
 router.get('/register', (req, res) => {
   // If the user is already logged in, redirect to the homepage
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+  //if (req.session.loggedIn) {
+    //res.redirect('/');
+    //return;
+  //}
   // Otherwise, render the 'login' template
-  res.render('sign-up');
+  res.render('signup');
 });
 
 
