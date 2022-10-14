@@ -1,42 +1,38 @@
 const router = require('express').Router();
-
+const sequelize = require('../config/connection');
+const { User} = require('../models');
+const withAuth = require('../utils/auth');
 
 // homepage route
 router.get('/', async (req, res) => {
     try {
-       res.render('homepage', {});
+       res.render('homepage', {
+      // TODO: Add a comment describing the functionality of this property
+      loggedIn: req.session.loggedIn,
+    });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
   });
 
- 
+ // login route
+router.get('/login', (req, res) => {
+  //if (req.session.loggedIn) {
+   // res.redirect('/');
+   // return;
+  //}
+  res.render('login');
+});
+
 // signup route
-router.get('/register', (req, res) => {
-  // If the user is already logged in, redirect to the homepage
+router.get('/signup', (req, res) => {
   //if (req.session.loggedIn) {
     //res.redirect('/');
     //return;
   //}
-  // Otherwise, render the 'login' template
   res.render('signup');
 });
-
-
-// login route
-  router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect to the homepage
-    //if (req.session.loggedIn) {
-      //res.redirect('/');
-      //return;
-    //}
-    // Otherwise, render the 'login' template
-    res.render('login');
-  });
-
-
-
 
 
   module.exports = router;
