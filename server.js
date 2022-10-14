@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 3001;
 //  })
 // };
 
-//set handlebars template engine 
+//setup handlebars template engine 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -35,9 +35,6 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(require('./controllers/'));
-
-//setup api routes
-//app.use(routes);
 
 //initialize server
 sequelize.sync({ force: false }).then(() => {

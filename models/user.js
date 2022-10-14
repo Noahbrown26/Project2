@@ -19,6 +19,9 @@ class User extends Model {
       username: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+          isUsername: true,
+        },
       },
       email: {
         type: DataTypes.STRING,
