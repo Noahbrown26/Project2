@@ -8179,6 +8179,15 @@ padding-left: 100px;
   .ftco-section {
     padding: 7em 0; }
   
+    .ftco {
+      margin-top: auto;
+      margin-bottom: auto;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      padding-left: 25%;
+    }
+
   .ftco-no-pt {
     padding-top: 0; }
   
