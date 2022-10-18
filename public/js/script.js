@@ -160,3 +160,13 @@ function getCookie(name){
     })
     return result;
 }
+
+var registerBtn = document.getElementById('sign-up-btn');
+
+function formSubmit() {
+    document.location.replace("/login");
+}
+
+
+registerBtn.addEventListener("click", (formSubmit) => {
+});
