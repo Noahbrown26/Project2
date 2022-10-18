@@ -8,7 +8,9 @@
  .custom-login {
 padding-left: 100px;
  }
-
+ .darkmode-layer, .darkmode-toggle {
+  z-index: 500;
+}
  .hero {
     height: 100vh;
     width: 100%;

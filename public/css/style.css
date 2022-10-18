@@ -4,6 +4,9 @@
     font-family: 'Space Grotesk', sans-serif;
     box-sizing: border-box;
 }
+.darkmode-layer, .darkmode-toggle {
+    z-index: 500;
+  }
 
 .hero {
     height: 100vh;
