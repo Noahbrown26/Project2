@@ -255,8 +255,8 @@ input{
         overflow: hidden;
         margin-bottom: 25px;
         background: #f1f3f4;
-        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px,
-        rgb(255, 255, 255, 0.5) -3px -3px 6px 1px;
+        box-shadow: rgb(214, 93, 12) 3px 3px 6px 0px,
+        rgba(202, 14, 14, 0.788) -3px -3px 6px 1px;
     }
     
     main article img {
