@@ -23,10 +23,10 @@ Project Vinyl that is a search engine that utilizes the itunes API to find songs
 - Sequelize
 - Bcrypt
 
-## Screen shots
+## Screenshots
 
 ![](./public/images/screen1.PNG)
-![](./public/images/screen1.PNG)
+![](./public/images/screen2.PNG)
 
 ### Contributors
 - [Noah Brown](https://github.com/Noahbrown26)
