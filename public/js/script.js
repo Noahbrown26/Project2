@@ -1,5 +1,4 @@
-
-
+// song fetch api //
 let term = '';
 const updateTerm = (event) => {
   event.preventDefault()
@@ -101,65 +100,7 @@ for (let i = 0; i < audio.length; i++) {
 }
 }, true)
 
-// function that saves user creation inputs to local storage //
-
-function formSubmit(event) {
-    event.preventDefault();
-    var userEmail = document.getElementById('email').value
-    var userName = document.getElementById('username').value
-    var userPassword = document.getElementById('password').value
-    var userBio = document.getElementById('bio').value
-
-    localStorage.setItem('Email:', userEmail);
-    localStorage.setItem('Username:', userName);
-    localStorage.setItem('Password:', userPassword);
-    localStorage.setItem('Bio:', userBio);
-
-}
-
-// event listener for modal save button //
-
-var saveBtn = document.getElementById('savebtn')
-
-saveBtn.addEventListener('click', formSubmit);
-
-
-
-const firstText = document.querySelector("#firstText");
-const lastText = document.querySelector("#lastText");
-const submitBtn = document.querySelector("#submitBtn");
-const cookieBtn = document.querySelector("#cookieBtn");
-
-submitBtn.addEventListener("click", () => {
-    setCookie("firstName", firstText.value, 365);
-    setCookie("lastName", lastText.value, 365);
-});
-cookieBtn.addEventListener("click", () => {
-    firstText.value = getCookie("firstName");
-    lastText.value = getCookie("lastName");
-});
-
-function setCookie(name, value, daysToLive){
-    const date = new Date();
-    date.setTime(date.getTime() +  (daysToLive * 24 * 60 * 60 * 1000));
-    let expires = "expires=" + date.toUTCString();
-    document.cookie = `${name}=${value}; ${expires}; path=/`
-}
-function deleteCookie(name){
-    setCookie(name, null, null);
-}
-function getCookie(name){
-    const cDecoded = decodeURIComponent(document.cookie);
-    const cArray = cDecoded.split("; ");
-    let result = null;
-    
-    cArray.forEach(element => {
-        if(element.indexOf(name) == 0){
-            result = element.substring(name.length + 1)
-        }
-    })
-    return result;
-}
+// event listener for sign up button //
 
 var registerBtn = document.getElementById('sign-up-btn');
 

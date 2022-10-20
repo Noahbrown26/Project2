@@ -27,7 +27,7 @@
         background: #1e1e1e;
     }
 
-/* top header CSS */
+/* navbar CSS */
 
 .nav {
     display: flex;
@@ -211,10 +211,10 @@ input{
     form:valid a {
     display: block;
     }
-    /* end search bar */
+/* end search bar */
 
 
-    /* Song card CSS */
+/* Song card CSS */
 
     .songs {
         display: none;
@@ -284,10 +284,10 @@ input{
         overflow: hidden;
         width: 100%;
     }
-    /* end song card CSS */
+/* end song card CSS */
 
 
-    /* mobile media query */
+/* mobile media query */
 
     @media (max-width: 768px) {
         
@@ -373,9 +373,9 @@ input{
             right: 2%;
         }
     }
-    /* end mobile media query */
+/* end mobile media query */
 
-    /* Heart Icon */
+/* Heart Icon */
     :root {
         --grey: #ccc;
         --magenta: #f06;
@@ -461,5 +461,87 @@ input{
         }
       
       }
-    /* end heart icon */
+/* end heart icon */
     
+/* dropdown menu */
+        .navbar .logo a{
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+        
+        .navbar img {
+        position: relative;
+        right: -10px;
+        }
+    
+        .navbar .nav_right > ul{
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar .nav_right ul li.nr_li{
+            margin-left: 25px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 20px;
+            position: relative;
+        }
+        
+        .navbar .nav_right ul li.nr_li:hover {
+            color: #cefffc;
+        }
+        
+        .navbar .nav_right ul li img{
+            width: 50px;
+            vertical-align: middle;
+        }
+        
+        .navbar .dd_menu {
+            position: absolute;
+            right: 10px;
+            top: 65px;
+            display: flex;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+            display: none;
+        }
+        
+        .navbar .dd_menu .dd_left{
+            background: grey;
+            width: 33%;
+            padding: 10px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        
+        .navbar .dd_menu .dd_left li{
+            color: #fff;
+        }
+        
+        .navbar .dd_menu .dd_right{
+            padding: 10px;
+        }
+        
+        .navbar .dd_menu li{
+            margin-bottom: 10px;
+            color: #868686;
+        }
+        
+        .navbar .dd_menu:before{
+            content: "";
+            position: absolute;
+            top: -20px;
+            right: 30px;
+            border: 10px solid;
+            border-color: transparent transparent #fff transparent;
+        }
+        
+        .navbar .dd_main.active .dd_menu{
+            display: flex;
+        }
