@@ -1,80 +1,34 @@
-# Project2 - ProyectVinyl 
+# ProyectVinyl 
 
-This project is an application called Vinyl
-This application will also be deployed to Heroku.
+![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
-[View deployed HEROKU app here!]()
+Project Vinyl that is a search engine that utilizes the itunes API to find songs. The priority of this assignment was to add user creation that is connected to a `Mysql` database. `Node.js` & `Express.js` were used for the backend API. The `dotenv` & `bcrypt` npm packages were used for enviornment variables and password hashing to assist with login authentication. `Sequelize` was used for model creation and database management. `Express-Handlebars` was the HTML templating engine used for the front end of this application.
 
-  * [Installation](#install)
-  * [Usage](#usage)
-  
-
-
+[View deployed HEROKU app here!](https://projectvinyl.herokuapp.com/)
 
 ## Project2 Requirements
 
-- Use Node.js and Express.js to create a RESTful API.
+![](./public/images/screen3.PNG)
 
-- Use Handlebars.js as the templating engine.
-
-- Use MySQL and the Sequelize ORM for the database.
-
-- Have both GET and POST routes for retrieving and adding new data.
-
-- Be deployed using Heroku (with data).
-
-- Use at least one new library, package, or technology that we haven’t discussed.
-
-- Have a polished UI.
-
-- Be responsive.
-
-- Be interactive (i.e., accept and respond to user input).
-
-- Have a folder structure that meets the MVC paradigm.
-
-- Include authentication (express-session and cookies).
-
-- Protect API keys and sensitive information with environment variables.
-
-- Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
-- Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
-
-
-## Install
-
-Clone project.
-Run the following line of code in your terminal to install all the needed packages: 
-```
-npm i
-```
-
-
-## Usage
-
-Once all the packages have been installed, open terminal and run the following code in command line : 
-```
-node server.js
-```
-This will run the server where you can find the page on localhost:3001. To end your server in your terminal type: control + c
-
-
-## Built With
-- HTML
+## Technologies used
+- HTML5
 - CSS
-- Bulma 
+- Bootstrap
 - JavaScript
 - Node.js
-  - Express.js
+- Express.js
+- Express Handlebars
+- Express Sessions
+- Mysql2
+- Sequelize
+- Bcrypt
 
-## Screen shots
+## Screenshots
 
-![Shot-1]()
-![Shot-2]()
+![](./public/images/screen1.PNG)
+![](./public/images/screen2.PNG)
 
-### Credits
+### Contributors
 - [Noah Brown](https://github.com/Noahbrown26)
 - [Eduardo Monje](https://github.com/Goldnboy26)
 - [Luis Villa](https://github.com/luisvilla315)
