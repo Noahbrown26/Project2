@@ -19,7 +19,7 @@ async function loginFormHandler(event) {
         });
         // when the fetch promise is fufilled, check the response status; if the response is good, load the dashboard; if there is an error, alert with the status
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/search');
         } else {
             let result = await response.json()
             alert(result.message)
