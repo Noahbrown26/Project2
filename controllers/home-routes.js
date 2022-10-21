@@ -4,7 +4,7 @@ const { User} = require('../models');
 const withAuth = require('../utils/auth');
 
 // homepage route
-router.get('/', async (req, res) => {
+router.get('/search', async (req, res) => {
     try {
        res.render('homepage', {
       // TODO: Add a comment describing the functionality of this property
@@ -34,5 +34,13 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+ // login route
+ router.get('/', (req, res) => {
+  //if (req.session.loggedIn) {
+   // res.redirect('/');
+   // return;
+  //}
+  res.render('explore');
+});
 
-  module.exports = router;
+module.exports = router;
